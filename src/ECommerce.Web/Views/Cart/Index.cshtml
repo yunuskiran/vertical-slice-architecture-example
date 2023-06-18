@@ -1,0 +1,13 @@
+@model List<CartItem>
+
+<h1>Shopping Cart</h1>
+
+@foreach (var item in Model)
+{
+    <div>
+        <h4>@item.Product.Name</h4>
+        <p>Quantity: @item.Quantity</p>
+        <p>Price: @item.Product.Price</p>
+        <a href="@Url.Action("RemoveFromCart", "Cart", new { productId = item.Product.Id })">Remove</a>
+    </div>
+}
